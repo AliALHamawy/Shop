@@ -1,0 +1,51 @@
+.header .topSection{
+    background-color: #212934;
+    /* background-color:#fafafa; */
+}
+.header .bottomSection ul li{
+    transition: all .3s;
+}
+.header .bottomSection ul li:hover{
+    color: #59ab6e;
+}
+
+.header .bottomSection .menu {
+    display: none;
+}
+@media (max-width: 768px) {
+    .header .topSection{
+        display: none;
+}
+    .header .bottomSection .mid{
+        display: none;
+}
+    .header .bottomSection .right{
+        display: none;
+}
+.header .bottomSection .menu {
+    display: flex;
+    transition: all .3s;
+}
+}
+.mobileNav{
+    display: none;
+}
+.mobileNav.open{
+    display: flex;
+
+}
+
+.header .absSearch{
+    display: none;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.header .absSearch.open{
+    display: flex;
+    position: fixed;
+    z-index: 9999999999999999999;
+}
+
+.header input{
+    outline: none;
+}
