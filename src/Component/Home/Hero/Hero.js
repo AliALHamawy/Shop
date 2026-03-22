@@ -1,0 +1,6 @@
+const HeroInfo = [
+    {id: 1 , imgPath: "/assets/img/banner_img_01.jpg", title: "Zay eCommerce", subTitle: 'Tiny and Perfect eCommerce Template', para: 'Zay Shop is an eCommerce HTML5 CSS template with latest version of Bootstrap 5 (beta 1). This template is 100% free provided by TemplateMo website. Image credits go to Freepik Stories, Unsplash and Icons 8.'},
+    {id: 2 , imgPath: "/assets/img/banner_img_02.jpg", title: "Proident occaecat", subTitle: 'Aliquip ex ea commodo consequat', para: 'You are permitted to use this Zay CSS template for your commercial websites. You are not permitted to re-distribute the template ZIP file in any kind of template collection websites.'},
+    {id: 3 , imgPath: "/assets/img/banner_img_03.jpg", title: "Repr in voluptate", subTitle: 'Ullamco laboris nisi ut', para: 'We bring you 100% free CSS templates for your websites. If you wish to support TemplateMo, please make a small contribution via PayPal or tell your friends about our website. Thank you.'}
+]
+export default HeroInfo

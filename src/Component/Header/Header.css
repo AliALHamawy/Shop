@@ -1,11 +1,11 @@
 .header .topSection{
-    background-color: #212934;
+    background-color: var(--bg-dark);
     /* background-color:#fafafa; */
 }
-.header .bottomSection ul li{
+.header .bottomSection ul Link{
     transition: all .3s;
 }
-.header .bottomSection ul li:hover{
+.header .bottomSection ul Link:hover{
     color: #59ab6e;
 }
 
