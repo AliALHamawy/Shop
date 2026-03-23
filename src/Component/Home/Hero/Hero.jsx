@@ -107,11 +107,17 @@ function Hero() {
         onMouseLeave={startAutoScroll}
       >
         <FaAngleLeft
-          onClick={prevSlide}
+          onClick={prevSlide} onTouchStart={(e) => {
+            e.preventDefault()
+            prevSlide()
+          }}
           className='h-10 w-10 left-0.5 absolute top-[50%] translate-y-[-50%] text-(--color-green) arrowHero cursor-pointer hover:opacity-70 transition-opacity'
         />
         <FaAngleRight
-          onClick={nextSlide}
+          onClick={nextSlide} onTouchStart={(e) => {
+            e.preventDefault()
+            nextSlide()
+          }}
           className='h-10 w-10 right-0.5 absolute top-[50%] translate-y-[-50%] text-(--color-green) arrowHero cursor-pointer hover:opacity-70 transition-opacity'
         />
 
