@@ -1,4 +1,4 @@
-.hero{
+.hero {
     z-index: 1;
 }
 
@@ -14,17 +14,17 @@
     .hero .container p {
         font-size: 14px;
     }
-    
+
     .hero .right {
         width: 400px;
         height: 400px;
     }
-    
+
     .hero .left {
         width: 100%;
         height: auto;
     }
-    
+
     .hero .container {
         gap: 20px;
     }
@@ -67,26 +67,26 @@
         font-size: 16px;
         line-height: 1.5;
     }
-    
+
     /* Adjust carousel height for mobile */
     .hero {
         height: auto !important;
         min-height: 550px;
         padding: 20px 10px !important;
     }
-    
+
     .hero .left h1,
     .hero .left h2,
     .hero .left p {
         text-align: center;
     }
-    
+
     /* Make arrows smaller on mobile */
     .arrowHero {
         width: 30px !important;
         height: 30px !important;
     }
-    
+
     /* Adjust dots position */
     .absolute.bottom-4 {
         bottom: 10px;
@@ -98,27 +98,27 @@
         width: 220px;
         height: 220px;
     }
-    
+
     .hero .container h1 {
         font-size: 24px;
     }
-    
+
     .hero .container h2 {
         font-size: 18px;
     }
-    
+
     .hero .container p {
         font-size: 12px;
     }
-    
+
     .hero .left {
         padding: 0 10px;
     }
-    
+
     .hero {
         min-height: 480px;
     }
-    
+
     .arrowHero {
         width: 25px !important;
         height: 25px !important;
@@ -126,12 +126,12 @@
         bottom: 20px !important;
         transform: none !important;
     }
-    
+
     .arrowHero:first-of-type {
         left: 10px !important;
         right: auto !important;
     }
-    
+
     .arrowHero:last-of-type {
         right: 10px !important;
         left: auto !important;

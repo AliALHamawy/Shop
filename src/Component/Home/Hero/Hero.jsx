@@ -33,6 +33,24 @@ function Hero() {
     setCurrentIndex((prevIndex) => prevIndex - 1)
   }
 
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = (e) => {
+    touchEndX.current = e.changedTouches[0].clientX
+    const swipeDistance = touchEndX.current - touchStartX.current
+
+    if (Math.abs(swipeDistance) > 50) { // Minimum swipe distance
+      if (swipeDistance > 0) {
+        // Swipe right - previous slide
+        prevSlide()
+      } else {
+        // Swipe left - next slide
+        nextSlide()
+      }
+    }
+  }
 
   useEffect(() => {
     if (!isAnimating) return
@@ -60,7 +78,7 @@ function Hero() {
   const startAutoScroll = () => {
     intervalRef.current = setInterval(() => {
       nextSlide()
-    }, 5000)
+    }, 2500)
   }
 
   const stopAutoScroll = () => {
@@ -135,10 +153,10 @@ function Hero() {
                 setCurrentIndex(idx + 1)
               }}
               className={`w-2 h-2 rounded-full transition-all ${currentIndex - 1 === idx ||
-                  (currentIndex === 0 && idx === hero.length - 1) ||
-                  (currentIndex === extendedHero.length - 1 && idx === 0)
-                  ? 'bg-(--color-green) w-4'
-                  : 'bg-gray-400 hover:bg-gray-500'
+                (currentIndex === 0 && idx === hero.length - 1) ||
+                (currentIndex === extendedHero.length - 1 && idx === 0)
+                ? 'bg-(--color-green) w-4'
+                : 'bg-gray-400 hover:bg-gray-500'
                 }`}
               aria-label={`Go to slide ${idx + 1}`}
             />

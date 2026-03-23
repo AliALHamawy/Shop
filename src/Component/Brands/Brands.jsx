@@ -27,7 +27,6 @@ function Brands() {
         setCanScroll(false)
         if (scrollContainerRef.current) {
             const container = scrollContainerRef.current
-            const currentScroll = container.scrollLeft;
             const scrollAmount = getScrollAmount()
 
             container.scrollBy({
@@ -53,7 +52,6 @@ function Brands() {
 
         if (scrollContainerRef.current) {
             const container = scrollContainerRef.current;
-            const currentScroll = container.scrollLeft;
             const scrollAmount = getScrollAmount();
             const maxScroll = container.scrollWidth - container.clientWidth;
 
@@ -86,7 +84,7 @@ function Brands() {
             console.log("Auto scrolling...");
             if (!isAnimating && canScroll)
                 scrollRight();
-        }, 5000)
+        }, 5500)
     }
 
     const stopAutoScroll = () => {
@@ -112,7 +110,7 @@ function Brands() {
 
     return (
         <>
-            <div className="brands flex py-15 px-1 bg-(--bg-gray)" onMouseEnter={stopAutoScroll} onMouseLeave={startAutoScroll}>
+            <div className="brands flex py-15 px-1 bg-(--bg-gray)" >
                 <div className="cont flex flex-col m-auto gap-10">
                     <div className="top max-w-[546px] text-center m-auto">
                         <h1 className='text-5xl font-bold'>Our Brands</h1>
