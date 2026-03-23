@@ -12,7 +12,6 @@ function Hero() {
   const intervalRef = useRef(null)
   const trackRef = useRef(null)
 
-
   const extendedHero = [
     hero[hero.length - 1],
     ...hero,
@@ -33,35 +32,14 @@ function Hero() {
     setCurrentIndex((prevIndex) => prevIndex - 1)
   }
 
-  const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX
-  }
-
-  const handleTouchEnd = (e) => {
-    touchEndX.current = e.changedTouches[0].clientX
-    const swipeDistance = touchEndX.current - touchStartX.current
-
-    if (Math.abs(swipeDistance) > 50) { // Minimum swipe distance
-      if (swipeDistance > 0) {
-        // Swipe right - previous slide
-        prevSlide()
-      } else {
-        // Swipe left - next slide
-        nextSlide()
-      }
-    }
-  }
-
   useEffect(() => {
     if (!isAnimating) return
 
     const timeout = setTimeout(() => {
       if (currentIndex === 0) {
-
         setTransitionEnabled(false)
         setCurrentIndex(hero.length)
       } else if (currentIndex === extendedHero.length - 1) {
-
         setTransitionEnabled(false)
         setCurrentIndex(1)
       }
@@ -92,7 +70,6 @@ function Hero() {
     return () => stopAutoScroll()
   }, [hero.length])
 
-
   const getActualContent = () => {
     if (currentIndex === 0) return hero[hero.length - 1]
     if (currentIndex === extendedHero.length - 1) return hero[0]
@@ -107,14 +84,16 @@ function Hero() {
         onMouseLeave={startAutoScroll}
       >
         <FaAngleLeft
-          onClick={prevSlide} onTouchStart={(e) => {
+          onClick={prevSlide}
+          onTouchStart={(e) => {
             e.preventDefault()
             prevSlide()
           }}
           className='h-10 w-10 left-0.5 absolute top-[50%] translate-y-[-50%] text-(--color-green) arrowHero cursor-pointer hover:opacity-70 transition-opacity'
         />
         <FaAngleRight
-          onClick={nextSlide} onTouchStart={(e) => {
+          onClick={nextSlide}
+          onTouchStart={(e) => {
             e.preventDefault()
             nextSlide()
           }}
@@ -158,11 +137,18 @@ function Hero() {
                 setTransitionEnabled(true)
                 setCurrentIndex(idx + 1)
               }}
+              onTouchStart={(e) => {
+                e.preventDefault()
+                if (isAnimating) return
+                setIsAnimating(true)
+                setTransitionEnabled(true)
+                setCurrentIndex(idx + 1)
+              }}
               className={`w-2 h-2 rounded-full transition-all ${currentIndex - 1 === idx ||
-                (currentIndex === 0 && idx === hero.length - 1) ||
-                (currentIndex === extendedHero.length - 1 && idx === 0)
-                ? 'bg-(--color-green) w-4'
-                : 'bg-gray-400 hover:bg-gray-500'
+                  (currentIndex === 0 && idx === hero.length - 1) ||
+                  (currentIndex === extendedHero.length - 1 && idx === 0)
+                  ? 'bg-(--color-green) w-4'
+                  : 'bg-gray-400 hover:bg-gray-500'
                 }`}
               aria-label={`Go to slide ${idx + 1}`}
             />
