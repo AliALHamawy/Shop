@@ -1,0 +1,20 @@
+.footer li {
+    transition: all .3s;
+}
+
+.footer li:hover {
+    color: var(--color-green) !important;
+    cursor: pointer;
+}
+
+.footer .mide {
+    align-items: baseline;
+}
+
+.footer .mide input {
+    transition: all .3s;
+}
+
+.footer .mide input:focus {
+    border-color: var(--color-green);
+}

@@ -1,5 +1,5 @@
 import './Hero.css'
-import HeroInfo from './Hero'
+import HeroInfo from './HeroInfo'
 import { useState, useEffect, useRef } from 'react'
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
@@ -84,17 +84,17 @@ function Hero() {
   return (
     <>
       <div
-        className="hero h-[684px] w-[100vw] bg-(--hero-bg) px-10 flex overflow-hidden relative"
+        className="hero h-[694px] m-auto mt-24 md:mt-32 lg:mt-32 bg-(--hero-bg) px-10 flex overflow-hidden relative z-0"
         onMouseEnter={stopAutoScroll}
         onMouseLeave={startAutoScroll}
       >
         <FaAngleLeft
           onClick={prevSlide}
-          className='h-10 w-10 left-0.5 absolute top-[50%] translate-y-[-50%] text-(--color-green) arrowHero cursor-pointer z-10 hover:opacity-70 transition-opacity'
+          className='h-10 w-10 left-0.5 absolute top-[50%] translate-y-[-50%] text-(--color-green) arrowHero cursor-pointer hover:opacity-70 transition-opacity'
         />
         <FaAngleRight
           onClick={nextSlide}
-          className='h-10 w-10 right-0.5 absolute top-[50%] translate-y-[-50%] text-(--color-green) arrowHero cursor-pointer z-10 hover:opacity-70 transition-opacity'
+          className='h-10 w-10 right-0.5 absolute top-[50%] translate-y-[-50%] text-(--color-green) arrowHero cursor-pointer hover:opacity-70 transition-opacity'
         />
 
         <div className="carousel-container overflow-hidden w-full">
@@ -112,7 +112,7 @@ function Hero() {
                   <div className="left h-[588px] w-[590px] flex flex-col align-middle justify-center">
                     <h1 className='text-(--color-green) text-5xl font-extralight mb-3'>{item.title}</h1>
                     <h2 className='text-3xl font-light'>{item.subTitle}</h2>
-                    <p className='text-xl font-light'>{item.para}</p>
+                    <p className='text-xl font-light text-zinc-600'>{item.para}</p>
                   </div>
                   <div className="right h-[588px] w-[588px] my-auto flex justify-center align-middle">
                     <img src={item.imgPath} alt="" className='max-w-[100%] h-auto my-auto' />

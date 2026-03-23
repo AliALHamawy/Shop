@@ -4,13 +4,13 @@ import Categories from './Component/Home/Categories/Categories'
 import FeaturedProduct from './Component/Home/FeaturedProduct/FeaturedProduct'
 import Footer from './Component/Footer/Footer'
 import Header from './Component/Header/Header'
-import Hero from './Component/Home/Hero/Hero'
 import AboutHero from './Component/About/AboutHero/AboutHero'
 import Brands from './Component/Brands/Brands'
 import Services from './Component/About/Services/Services'
 import ShopLanding from './Component/Shop/ShopLanding'
 import TopContact from './Component/Contact/TopContact/TopContact'
 import BottomContact from './Component/Contact/BottomContact/BottomContact'
+import Hero from './Component/Home/Hero/Hero'
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-        <Routes>
+        <Routes >
           <Route path="/" 
           element = {
             <><Hero /><Categories /><FeaturedProduct/></>

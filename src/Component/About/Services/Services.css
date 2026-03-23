@@ -1,0 +1,13 @@
+.servecis .cont .bottom .servicesCard {
+    background-color: var(--color-white);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+    transition: all .5s !important;
+}
+
+.servecis .cont .bottom .servicesCard:hover {
+    background-color: var(--color-green);
+}
+.servecis .cont .bottom .servicesCard:hover .icon,
+.servecis .cont .bottom .servicesCard:hover p{
+    color: var(--color-white);
+}

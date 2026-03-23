@@ -1,3 +1,7 @@
+.hero{
+    z-index: 1;
+}
+
 @media (max-width: 840px) {
     .hero .container h1 {
         font-size: 32px;
@@ -50,17 +54,17 @@
     }
 
     .hero .container h1 {
-        font-size: 28px;
+        font-size: 32px;
         margin-bottom: 10px;
     }
 
     .hero .container h2 {
-        font-size: 20px;
+        font-size: 23px;
         margin-bottom: 10px;
     }
 
     .hero .container p {
-        font-size: 14px;
+        font-size: 16px;
         line-height: 1.5;
     }
     
