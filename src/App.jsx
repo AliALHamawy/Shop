@@ -11,6 +11,7 @@ import ShopLanding from './Component/Shop/ShopLanding'
 import TopContact from './Component/Contact/TopContact/TopContact'
 import BottomContact from './Component/Contact/BottomContact/BottomContact'
 import Hero from './Component/Home/Hero/Hero'
+import Product from './Component/Shop/Product/Product'
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
             <><TopContact/> <BottomContact /></>
           }
           />
+        <Route path="/Product/:slug" element={<Product />} />
         </Routes>
         <Footer />
       </BrowserRouter>
