@@ -1,5 +1,5 @@
 import './Header.css'
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { MdEmail } from "react-icons/md";
 import { BsTelephoneFill } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
@@ -10,17 +10,55 @@ import { FaSearch } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
-import { Link } from 'react-router-dom';
+import { Link, useLocation  } from 'react-router-dom';
 
 function Header() {
   const [isMenuOppen, setIsMenuOppen] = useState(false)
+  const [isSearchOppen, setIsSearchOppen] = useState(false)
+  const mobileMenuRef = useRef(null)
+  const menuButtonRef = useRef(null)
+  const location = useLocation()
+
   const handleMenuOppen = () => {
     setIsMenuOppen(!isMenuOppen)
   }
-  const [isSearchOppen, setIsSearchOppen] = useState(false)
+
   const handleSearchOppen = () => {
     setIsSearchOppen(!isSearchOppen)
   }
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if(
+        isMenuOppen&&
+        !mobileMenuRef.current.contains(event.target) &&
+        !menuButtonRef.current.contains(event.target)
+      ) {
+        setIsMenuOppen(false)
+      }
+    } 
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isMenuOppen])
+
+  useEffect(() => {
+    setIsMenuOppen(false)
+    setIsSearchOppen(false)
+  }, [location])
+
+  useEffect(() => {
+    if (isMenuOppen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMenuOppen])
+
   return (
     <>
       <nav className="header fixed w-[100vw] bg-(--bg-white) z-10 top-0">
@@ -62,8 +100,8 @@ function Header() {
             <span className="absolute bg-(--color-gray)  w-4 h-4 rounded-full text-[10px] text-center align-middle translate-x-9 -translate-y-1.5 cursor-pointer">7</span>
             <span className="absolute bg-(--color-gray)  w-6 h-4 rounded-full text-[10px] text-center align-middle translate-x-15.5 -translate-y-1.5 cursor-pointer">+99</span>
           </div>
-          <IoMdMenu className='menu text-3xl text-[#212934] hover:text-(--color-green) mt-3' onClick={handleMenuOppen} />
-          <div className={`mobileNav flex-col mt-20 fixed ml-[-40px] bg-(--bg-white) w-[100vw] ${isMenuOppen ? 'open' : ''}`}>
+          <IoMdMenu ref={menuButtonRef} className='menu text-3xl text-[#212934] hover:text-(--color-green) mt-3' onClick={handleMenuOppen} />
+          <div ref={mobileMenuRef} className={`mobileNav flex-col mt-20 fixed ml-[-40px] bg-(--bg-white) w-[100vw] ${isMenuOppen ? 'open' : ''}`}>
             <div className="w-[80%] m-auto">
               <div className='mobileUl' >
                 <ul className='flex  flex-col justify-between gap-10 md:gap-15 lg:gap-30 py-3 pl-4'>

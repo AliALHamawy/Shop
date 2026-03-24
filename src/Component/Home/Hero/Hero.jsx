@@ -89,7 +89,7 @@ function Hero() {
             e.preventDefault()
             prevSlide()
           }}
-          className='h-10 w-10 left-0.5 absolute top-[50%] translate-y-[-50%] text-(--color-green) arrowHero cursor-pointer hover:opacity-70 transition-opacity'
+          className='h-[30px] w-[30px] left-0.5 absolute top-[50%] translate-y-[-50%] text-(--color-green) arrowHero cursor-pointer hover:opacity-70 transition-opacity'
         />
         <FaAngleRight
           onClick={nextSlide}
@@ -97,7 +97,7 @@ function Hero() {
             e.preventDefault()
             nextSlide()
           }}
-          className='h-10 w-10 right-0.5 absolute top-[50%] translate-y-[-50%] text-(--color-green) arrowHero cursor-pointer hover:opacity-70 transition-opacity'
+          className='h-[30px] w-[30px] right-0.5 absolute top-[50%] translate-y-[-50%] text-(--color-green) arrowHero cursor-pointer hover:opacity-70 transition-opacity'
         />
 
         <div className="carousel-container overflow-hidden w-full">

@@ -190,7 +190,7 @@ function Product() {
                     </div>
                 </div>
                 <div className="bottom">
-                    {canScrollLeft && (
+                    {/* {canScrollLeft && (
                         <button
                             className="scroll-btn scroll-left"
                             onClick={scrollLeft}
@@ -198,7 +198,7 @@ function Product() {
                         >
                             <FaAngleLeft />
                         </button>
-                    )}
+                    )} */}
 
                     {/* {canScrollRight && (
                         <button
