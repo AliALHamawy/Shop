@@ -1,14 +1,24 @@
-.shop .rightBottom .card {
+.card {
     border: 1px solid var(--bg-gray);
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.10);
+}
+@media (min-width: 725px) {
+    .card img{
+        transition: all .5s;
+        filter: grayscale(1);
+    }
+    .card:hover img{
+        filter: grayscale(0);
+        scale: 103%;
+    }
 }
 
 .shop .rightBottom .top ul li{
     transition: all 0.3s;
 }
 
-.shop .rightBottom .top select optgroup option:hover{
-    background-color: red;
+.shop .rightBottom .top select option:hover{
+    color: red !important;
 }
 @media (max-width: 580px) {
     
@@ -17,4 +27,7 @@
     gap: 10px;
     margin: auto;
 }
+}
+.shop .leftTop ul li ul li {
+    transition: all .3s;
 }

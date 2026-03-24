@@ -35,8 +35,8 @@ function ShopLanding() {
                                 <FaAngleDown  className={`text-(--color-white) text-center bg-(--bg-dark) text-[22px] rounded-full transition-transform duration-300 cursor-pointer ${openCategory === 'gender' ? 'rotate-180' : ''}`}/>
                             </button>
                             <ul className={`flex flex-col overflow-hidden transition-all duration-300 ${openCategory === 'gender' ? 'max-h-40 mt-2' : 'max-h-0'}`}>
-                                <li className='text-[18px] h-[30px] p-1 '><a href="">Men</a></li>
-                                <li className='text-[18px] h-[30px] p-1 '><a href="">Women</a></li>
+                                <li className='text-[18px] h-[30px] p-1 cursor-pointer hover:text-(--color-green)'>Men</li>
+                                <li className='text-[18px] h-[30px] p-1 cursor-pointer hover:text-(--color-green)'>Women</li>
                             </ul>
                         </li>
                         <li className=''>
@@ -44,8 +44,8 @@ function ShopLanding() {
                                 <FaAngleDown  className={`text-(--color-white) text-center bg-(--bg-dark) text-[22px] rounded-full transition-transform duration-300 cursor-pointer ${openCategory === 'sale' ? 'rotate-180' : ''}`}/>
                             </button>
                             <ul className={`flex flex-col overflow-hidden transition-all duration-300 ${openCategory === 'sale' ? 'max-h-40 mt-2' : 'max-h-0'}`}>
-                                <li className='text-[18px] h-[30px] p-1 '><a href="">Sport</a></li>
-                                <li className='text-[18px] h-[30px] p-1 '><a href="">Luxury</a></li>
+                                <li className='text-[18px] h-[30px] p-1 cursor-pointer hover:text-(--color-green)'>Sport</li>
+                                <li className='text-[18px] h-[30px] p-1 cursor-pointer hover:text-(--color-green)'>Luxury</li>
                             </ul>
                         </li>
                         <li className=''>
@@ -53,9 +53,9 @@ function ShopLanding() {
                                 <FaAngleDown  className={`text-(--color-white) text-center bg-(--bg-dark) text-[22px] rounded-full transition-transform duration-300 cursor-pointer ${openCategory === 'product' ? 'rotate-180' : ''}`}/>
                             </button>
                             <ul className={`flex flex-col overflow-hidden transition-all duration-300 ${openCategory === 'product' ? 'max-h-40 mt-2' : 'max-h-0'}`}>
-                                <li className='text-[18px] h-[30px] p-1 '><a href="">Bag</a></li>
-                                <li className='text-[18px] h-[30px] p-1 '><a href="">Sweather</a></li>
-                                <li className='text-[18px] h-[30px] p-1 '><a href="">Sunglass</a></li>
+                                <li className='text-[18px] h-[30px] p-1 cursor-pointer hover:text-(--color-green)'>Bag</li>
+                                <li className='text-[18px] h-[30px] p-1 cursor-pointer hover:text-(--color-green)'>Sweather</li>
+                                <li className='text-[18px] h-[30px] p-1 cursor-pointer hover:text-(--color-green)'>Sunglass</li>
                             </ul>
                         </li>
                     </ul>
@@ -67,20 +67,23 @@ function ShopLanding() {
                             <li className='transition-[3s] hover:text-(--color-green)'>Men's</li>
                             <li className='transition-[3s] hover:text-(--color-green)'>Women's</li>
                         </ul>
-                        <select name="" id="" className='border outline-0 w-50 p-2  border-(--color-green) '>
+                        <select className='border outline-0 w-50 p-2  border-(--color-green) '>
 
-                        <optgroup className='border-(--color-green)'>
+                        {/* <optgroup className='border-(--color-green)'> */}
                             <option value="1" className='hover:bg-(--color-green)'>Featured</option>
-                            <option value="1" className='hover:bg-(--color-green)'>A to Z</option>
-                            <option value="1" className='hover:bg-(--color-green)'>Item</option>
-                        </optgroup>
+                            <option value="2" className='hover:bg-(--color-green)'>A to Z</option>
+                            <option value="3" className='hover:bg-(--color-green)'>Item</option>
+                        {/* </optgroup> */}
                         </select>
                     </div>
                     <div className="cardsContainer flex flex-wrap justify-center gap-5">
 
                         {productCard.map((item) => (
                             <div className="card w-[306px] h-[550.66px] cursor-pointer" key={item.id} onClick={() => handleClick(item)}>
+                                <div className="imageCont card max-w-[306px] overflow-hidden">
+
                                 <img src={item.coverImg} alt="" />
+                                </div>
                                 <div className="flex flex-col gap-2 p-2">
                                     <h1 className='text-[18px] font-light'>{item.title}</h1>
                                     <p className='text-[18px] font-light px-2'>{item.sizes}</p>

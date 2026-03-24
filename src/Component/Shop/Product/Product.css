@@ -1,0 +1,90 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Bottom section scroll buttons */
+.bottom {
+    position: relative;
+    padding: 0 20px;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-green, #315e3c);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-btn:hover {
+    background-color: #1e3a28;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.scroll-left {
+    left: 10px;
+}
+
+.scroll-right {
+    right: 10px;
+}
+
+.scroll-btn svg {
+    font-size: 20px;
+}
+
+/* Optional: Add gradient fade effect at edges */
+.shop .bottom::before,
+.shop .bottom::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.shop .bottom::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0.9), transparent);
+}
+
+.shop .bottom::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0.9), transparent);
+}
+
+/* Active grab cursor when dragging */
+.cont:active {
+    cursor: grabbing;
+}
+
+/* Media query for mobile */
+@media (max-width: 768px) {
+    .scroll-btn {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .scroll-btn svg {
+        font-size: 16px;
+    }
+    
+    .shop .bottom::before,
+    .shop .bottom::after {
+        width: 30px;
+    }
+}
